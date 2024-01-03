@@ -1,0 +1,12 @@
+# 文法例：優先度ありの四則演算
+# 入力例：1 * 1 - 1 + 1 / 1
+
+Equation -> Add | Mult
+Add -> AddLeft AddSymbol AddRight
+AddLeft -> 1 | Add | Mult
+AddSymbol -> + | -
+AddRight -> 1 | Mult
+Mult -> MultLeft MultSymbol MultRight
+MultLeft -> 1 | Mult
+MultSymbol -> * | /
+MultRight -> 1
