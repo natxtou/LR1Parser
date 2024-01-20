@@ -1,12 +1,17 @@
 # •¶–@—áF—Dæ“x‚ ‚è‚ÌŽl‘¥‰‰ŽZ
-# “ü—Í—áF1 * 1 - 1 + 1 / 1
+# “ü—Í—áF1 * 1 - 1 + 1 / ( 1 + 1 )
 
-Equation -> Add | Mult
-Add -> AddLeft AddSymbol AddRight
-AddLeft -> 1 | Add | Mult
-AddSymbol -> + | -
-AddRight -> 1 | Mult
-Mult -> MultLeft MultSymbol MultRight
-MultLeft -> 1 | Mult
-MultSymbol -> * | /
-MultRight -> 1
+S -> A | M | P
+# ‰ÁŽZAŒ¸ŽZ
+A -> A1 A2 A3
+A1 -> 1 | A | M | P
+A2 -> + | -
+A3 -> 1 | M | P
+# æŽZAœŽZ
+M -> M1 M2 M3
+M1 -> 1 | M | P
+M2 -> * | /
+M3 -> 1 | P
+# Š‡ŒÊ
+P -> ( P1 )
+P1 -> A | M

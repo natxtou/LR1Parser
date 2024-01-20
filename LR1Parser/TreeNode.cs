@@ -77,13 +77,13 @@ namespace LR1Parser {
                 for (int i = 0; i < sib.Count; i++) {
                     if (i == 0) {
                         if (sib[i] < now.Parent.Childs.Count - 1) {
-                            parts.Add($"|-- {now.Symbol.Name}{toNull}");
+                            parts.Add($" |- {now.Symbol.Name}{toNull}");
                         } else {
-                            parts.Add($"`-- {now.Symbol.Name}{toNull}");
+                            parts.Add($" `- {now.Symbol.Name}{toNull}");
                         }
                     } else {
                         if (sib[i] < now.Parent.Childs.Count - 1) {
-                            parts.Add($"|   ");
+                            parts.Add($" |  ");
                         } else {
                             parts.Add($"    ");
                         }

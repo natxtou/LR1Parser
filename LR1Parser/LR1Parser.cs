@@ -24,7 +24,15 @@ namespace LR1Parser {
         private readonly Dictionary<int, Dictionary<Symbol, List<ParseAction>>> ParseTable = new();
 
         /// <summary>
-        /// 文法ルールを追加する<br/>
+        /// 文法ルールを追加する
+        /// </summary>
+        /// <param name="rule"></param>
+        public void AddRule(Rule rule) {
+            Grammar.Add(rule);
+        }
+
+        /// <summary>
+        /// 文法ルールを追加する。文字列から文法を追加するため以下の制約あり<br/>
         /// ※大文字英字から始まるシンボルは非終端シンボル、それ以外は終端シンボルと解釈されます<br/>
         /// ※左辺と右辺の区切り文字列「->」と右辺のOR区切り文字「|」は変更可能です<br/>
         /// ※例：L -> R1 R2 | R3 | （非終端シンボル[L]はシンボル列[R1,R2]または[R3]または[空シンボル列]を生成）
@@ -32,7 +40,7 @@ namespace LR1Parser {
         /// <param name="ruleStr">ルール文字列</param>
         /// <param name="splitStrLR">左辺と右辺の区切り文字列</param>
         /// <param name="splitStrOr">右辺のORを表す文字列</param>
-        public void AddRule(string ruleStr, string splitStrLR = "->", string splitStrOr = "|") {
+        public void AddRuleByString(string ruleStr, string splitStrLR = "->", string splitStrOr = "|") {
             // 2連続以上の空白記号は除去、かつ全て半角スペースに変換
             string ruleStrConv = new Regex(@"[ 　\t\r\n]+").Replace(ruleStr, " ");
 

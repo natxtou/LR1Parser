@@ -27,7 +27,7 @@ internal class Program {
             .Where(s => s.Trim(' ') != "")
             .Where(s => s.Trim(' ')[0] != '#')
             .ToList()
-            .ForEach(s => LRP.AddRule(s));
+            .ForEach(s => LRP.AddRuleByString(s));
 
         Console.WriteLine("開始シンボルを入力してください。");
         Console.Write("> ");
